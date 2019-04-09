@@ -5,7 +5,7 @@ import { ToastrService } from '../../../@core/utils/toastr.service';
 @Component({
   selector: 'ngx-datepicker-form',
   templateUrl: './datepicker-form.component.html',
-  styleUrls: ['./datepicker-form.component.scss']
+  styleUrls: ['./datepicker-form.component.scss'],
 })
 export class DatepickerFormComponent implements OnInit {
   form: FormGroup;
@@ -25,7 +25,7 @@ export class DatepickerFormComponent implements OnInit {
     if (this.form.valid) {
       this.toastrService.showSuccessSubmission();
     }
-    console.log(this.form);
+    // console.log(this.form);
   }
 
   get f() {

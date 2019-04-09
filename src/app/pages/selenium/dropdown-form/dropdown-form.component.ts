@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from '../../../@core/utils/toastr.service';
-import { requireCheckboxesToBeCheckedValidator } from '../../../@core/utils/validators/checkbox.validator';
 
 @Component({
   selector: 'ngx-dropdown-form',
   templateUrl: './dropdown-form.component.html',
-  styleUrls: ['./dropdown-form.component.scss']
+  styleUrls: ['./dropdown-form.component.scss'],
 })
 export class DropdownFormComponent implements OnInit {
   form: FormGroup;
@@ -26,7 +25,7 @@ export class DropdownFormComponent implements OnInit {
     if (this.form.valid) {
       this.toastrService.showSuccessSubmission();
     }
-    console.log(this.form);
+    // console.log(this.form);
   }
 
   get f() {

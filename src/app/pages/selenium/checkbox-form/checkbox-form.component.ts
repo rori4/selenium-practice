@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { ToastrService } from '../../../@core/utils/toastr.service';
 import { requireCheckboxesToBeCheckedValidator } from '../../../@core/utils/validators/checkbox.validator';
 
@@ -34,7 +34,7 @@ export class CheckboxFormComponent implements OnInit {
     if (this.form.valid) {
       this.toastrService.showSuccessSubmission();
     }
-    console.log(this.form);
+    // console.log(this.form);
   }
 
   get f() {

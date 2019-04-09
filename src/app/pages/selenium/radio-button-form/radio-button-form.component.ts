@@ -5,7 +5,7 @@ import { ToastrService } from '../../../@core/utils/toastr.service';
 @Component({
   selector: 'ngx-radio-button-form',
   templateUrl: './radio-button-form.component.html',
-  styleUrls: ['./radio-button-form.component.scss']
+  styleUrls: ['./radio-button-form.component.scss'],
 })
 export class RadioButtonFormComponent implements OnInit {
   form: FormGroup;
