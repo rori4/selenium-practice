@@ -10,16 +10,28 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/practice/simple-registration',
       },
       {
-        title: 'Form Layouts',
-        link: '/pages/forms/layouts',
+        title: '02.Radio Button Form',
+        link: '/pages/practice/radio-button-form',
       },
       {
-        title: 'Buttons',
-        link: '/pages/forms/buttons',
+        title: '03.CheckBox Form',
+        link: '/pages/practice/checkbox-form',
       },
       {
-        title: 'Datepicker',
-        link: '/pages/forms/datepicker',
+        title: '04.Dropdown Menu Form',
+        link: '/pages/practice/dropdown-form',
+      },
+      {
+        title: '05.DatePicker Form',
+        link: '/pages/practice/datepicker-form',
+      },
+      {
+        title: '05.File Upload Form',
+        link: '/pages/practice/datepicker-form',
+      },
+      {
+        title: '06.IFrame Form',
+        link: '/pages/practice/iframe-form',
       },
     ],
   },
@@ -54,30 +66,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
     icon: 'nb-tables',
     children: [
       {
-        title: 'Smart Table',
+        title: '01.Smart Table',
         link: '/pages/tables/smart-table',
-      },
-    ],
-  },
-  {
-    title: 'Auth Practice',
-    icon: 'nb-locked',
-    children: [
-      {
-        title: 'Login',
-        link: '/auth/login',
-      },
-      {
-        title: 'Register',
-        link: '/auth/register',
-      },
-      {
-        title: 'Request Password',
-        link: '/auth/request-password',
-      },
-      {
-        title: 'Reset Password',
-        link: '/auth/reset-password',
       },
     ],
   },

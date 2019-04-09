@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>CheckBox Form Example (Reservation)</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="form" (submit)="register()">
+          <div class="form-group row">
+            <label class="col-sm-3">Select this</label>
+            <div class="col-sm-9">
+              <input
+                nbInput
+                formControlName="dateOne"
+                placeholder="Min Max Picker"
+                [nbDatepicker]="picker"
+              />
+              <nb-datepicker #picker [min]="min" [max]="max"></nb-datepicker>
+              <ng-container *ngIf="f.dateOne.invalid && f.dateOne.touched">
+                <p class="error-message" *ngIf="f.dateOne.errors?.required">
+                  Please choose at least one option!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3">Please pick this date too</label>
+            <div class="col-sm-9">
+              <input
+                nbInput
+                formControlName="dateTwo"
+                placeholder="Range Picker"
+                [nbDatepicker]="rangepicker"
+              />
+              <nb-rangepicker #rangepicker></nb-rangepicker>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button
+                type="submit"
+                name="submit"
+                id="submit"
+                class="btn btn-primary"
+                [disabled]="form.invalid"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-3"></div>
+</div>

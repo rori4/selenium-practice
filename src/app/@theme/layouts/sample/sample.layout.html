@@ -13,6 +13,11 @@
       </a>
     </nb-sidebar-header>
     <ng-content select="nb-menu"></ng-content>
+    <nb-sidebar-header *ngIf="currentTheme !== 'corporate'">
+      <a href="https://seleniumhq.github.io/selenium/docs/api/javascript/index.html" target="_blank" class="btn btn-hero-info main-btn">
+        <i class="ion ion-bookmark"></i> <span> Selenium JS</span>
+      </a>
+    </nb-sidebar-header>
   </nb-sidebar>
 
   <nb-layout-column class="main-content">

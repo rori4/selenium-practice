@@ -5,7 +5,7 @@ import { ThemeModule } from '../../@theme/theme.module';
 
 @NgModule({
   imports: [
-    ThemeModule,
+  ThemeModule,
     SeleniumRoutingModule,
   ],
   declarations: [

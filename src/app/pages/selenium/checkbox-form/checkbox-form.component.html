@@ -1,0 +1,151 @@
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>CheckBox Form Example (Reservation)</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="form" (submit)="register()">
+          <!-- {{ form.value | json }} -->
+          <div class="form-group  row">
+            <label for="name" class="col-sm-3 col-form-label">Name *</label>
+            <div class="col-sm-9">
+              <input
+                nbInput
+                formControlName="name"
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="name"
+                [status]="f.name.invalid && f.name.touched ? 'danger' : null"
+              />
+              <ng-container *ngIf="f.name.invalid && f.name.touched">
+                <p class="error-message" *ngIf="f.name.errors?.required">
+                  Name is required!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="comment" class="col-sm-3 col-form-label"
+              >Comment (optional)</label
+            >
+            <div class="col-sm-9">
+              <input
+                nbInput
+                formControlName="comment"
+                type="text"
+                class="form-control"
+                id="comment"
+                name="comment"
+                placeholder="comment"
+              />
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3">Reservation *</label>
+            <div class="col-sm-9">
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    class="custom-control-input"
+                    name="appartment"
+                    formControlName="appartment"
+                    value="one-bed-appartment"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-comment"
+                    >One-Bedroom Apartment</span
+                  >
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    class="custom-control-input"
+                    name="appartment"
+                    formControlName="appartment"
+                    value="two-bed-appartment"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-comment"
+                    >Two-Bedroom Apartment</span
+                  >
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    class="custom-control-input"
+                    name="appartment"
+                    formControlName="appartment"
+                    value="presidential-suite"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-comment">Presidential Suite</span>
+                </label>
+              </div>
+              <ng-container
+                *ngIf="f.appartment.invalid && f.appartment.touched"
+              >
+                <p class="error-message" *ngIf="f.appartment.errors?.required">
+                  You must choose an appartment type!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3">Inclusinve *</label>
+            <div class="col-sm-9">
+              <div class="form-group validation-checkboxes row" formGroupName="wantToEatGroup">
+                <nb-checkbox
+                  formControlName="breakfast"
+                  value="breakfast"
+                  status="success"
+                  class="col-sm-4"
+                  >Breakfast</nb-checkbox
+                >
+                <nb-checkbox
+                  formControlName="lunch"
+                  value="lunch"
+                  status="warning"
+                  class="col-sm-4"
+                  >Lunch</nb-checkbox
+                >
+                <nb-checkbox
+                  formControlName="dinner"
+                  value="dinner"
+                  status="danger"
+                  class="col-sm-4"
+                  >Dinner</nb-checkbox
+                >
+              </div>
+              <ng-container *ngIf="f.wantToEatGroup.invalid && f.wantToEatGroup.touched">
+                <p class="error-message" *ngIf="f.wantToEatGroup.errors?.requireOneCheckboxToBeChecked">
+                  You must choose at least one that you want included!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button
+                type="submit"
+                name="submit"
+                id="submit"
+                class="btn btn-primary"
+                [disabled]="form.invalid"
+              >
+                Send Reservation Request
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-3"></div>
+</div>

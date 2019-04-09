@@ -19,7 +19,9 @@ export class SimpleRegistrationComponent implements OnInit {
   }
 
   register() {
-    this.toastrService.showSuccessSubmission();
+    if (this.form.valid) {
+      this.toastrService.showSuccessSubmission();
+    }
   }
 
   get f() {

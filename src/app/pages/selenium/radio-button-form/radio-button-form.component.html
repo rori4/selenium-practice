@@ -1,0 +1,139 @@
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Radio Button Form Example</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="form" (submit)="register()">
+          <!-- {{ form.value | json }} -->
+          <div class="form-group  row">
+            <label for="title" class="col-sm-3 col-form-label"
+              >Title *</label
+            >
+            <div class="col-sm-9">
+              <input
+                nbInput
+                formControlName="title"
+                type="text"
+                class="form-control"
+                id="title"
+                name="title"
+                placeholder="title"
+                [status]="f.title.invalid && f.title.touched ? 'danger' : null"
+              />
+              <ng-container *ngIf="f.title.invalid && f.title.touched">
+                <p class="error-message" *ngIf="f.title.errors?.required">
+                  Title is required!
+                </p>
+                <p class="error-message" *ngIf="f.title.errors?.minlength">
+                  Title must be at least 20 characters!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="description" class="col-sm-3 col-form-label"
+              >Description *</label
+            >
+            <div class="col-sm-9">
+              <input
+                nbInput
+                formControlName="description"
+                type="text"
+                class="form-control"
+                id="description"
+                name="description"
+                placeholder="description"
+                [status]="
+                  f.description.invalid && f.description.touched ? 'danger' : null
+                "
+              />
+              <ng-container *ngIf="f.description.invalid && f.description.touched">
+                <p class="error-message" *ngIf="f.description.errors?.required">
+                  Description is required!
+                </p>
+                <p class="error-message" *ngIf="f.description.errors?.minlength">
+                  Description must be minimum 20 characters!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-3">Radios *</label>
+            <div class="col-sm-9">
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    nbInput
+                    type="radio"
+                    class="custom-control-input"
+                    name="radioBtns"
+                    formControlName="radioBtns"
+                    value="option1"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description"
+                    >Option one is this and that&mdash;be sure to include why
+                    it's great</span
+                  >
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    nbInput
+                    type="radio"
+                    class="custom-control-input"
+                    name="radioBtns"
+                    formControlName="radioBtns"
+                    value="option2"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description"
+                    >Option two can be something else and selecting it will
+                    deselect option one</span
+                  >
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="custom-control custom-radio">
+                  <input
+                    nbInput
+                    type="radio"
+                    class="custom-control-input"
+                    name="radioBtns"
+                    formControlName="radioBtns"
+                    value="option3"
+                  />
+                  <span class="custom-control-indicator"></span>
+                  <span class="custom-control-description"
+                    >Option three is alone here and last but it is still a great option</span
+                  >
+                </label>
+              </div>
+              <ng-container *ngIf="f.radioBtns.invalid && f.radioBtns.touched">
+                <p class="error-message" *ngIf="f.radioBtns.errors?.required">
+                  You must choose a radio button!
+                </p>
+              </ng-container>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button
+                type="submit"
+                name="submit"
+                id="submit"
+                class="btn btn-primary"
+                [disabled]="form.invalid"
+              >
+                Register
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
