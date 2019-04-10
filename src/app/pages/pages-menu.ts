@@ -27,7 +27,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: '05.File Upload Form',
-        link: '/pages/practice/datepicker-form',
+        link: '/pages/practice/file-form',
       },
       {
         title: '06.IFrame Form',
@@ -35,32 +35,32 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
     ],
   },
-  {
-    title: 'Modal Practice',
-    icon: 'nb-layout-default',
-    children: [
-      {
-        title: 'Dialog',
-        link: '/pages/modal-overlays/dialog',
-      },
-      {
-        title: 'Window',
-        link: '/pages/modal-overlays/window',
-      },
-      {
-        title: 'Popover',
-        link: '/pages/modal-overlays/popover',
-      },
-      {
-        title: 'Toastr',
-        link: '/pages/modal-overlays/toastr',
-      },
-      {
-        title: 'Tooltip',
-        link: '/pages/modal-overlays/tooltip',
-      },
-    ],
-  },
+  // {
+  //   title: 'Modal Practice',
+  //   icon: 'nb-layout-default',
+  //   children: [
+  //     {
+  //       title: 'Dialog',
+  //       link: '/pages/modal-overlays/dialog',
+  //     },
+  //     {
+  //       title: 'Window',
+  //       link: '/pages/modal-overlays/window',
+  //     },
+  //     {
+  //       title: 'Popover',
+  //       link: '/pages/modal-overlays/popover',
+  //     },
+  //     {
+  //       title: 'Toastr',
+  //       link: '/pages/modal-overlays/toastr',
+  //     },
+  //     {
+  //       title: 'Tooltip',
+  //       link: '/pages/modal-overlays/tooltip',
+  //     },
+  //   ],
+  // },
   {
     title: 'Tables Practice',
     icon: 'nb-tables',

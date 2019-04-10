@@ -8,26 +8,30 @@ import { LayoutService } from '../../../@core/utils';
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
-  templateUrl: './header.component.html',
+  templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {
-
   @Input() position = 'normal';
 
   user: any;
 
-  userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
+  userMenu = [
+    { title: 'Udemy Profile', target: '_blank', url: 'https://www.udemy.com/user/rangelstoilov/' },
+    { title: 'GitHub Profile', target: '_blank', url: 'https://github.com/rori4' },
+  ];
 
-  constructor(private sidebarService: NbSidebarService,
-              private menuService: NbMenuService,
-              private userService: UserData,
-              private analyticsService: AnalyticsService,
-              private layoutService: LayoutService) {
-  }
+  constructor(
+    private sidebarService: NbSidebarService,
+    private menuService: NbMenuService,
+    private userService: UserData,
+    private analyticsService: AnalyticsService,
+    private layoutService: LayoutService,
+  ) {}
 
   ngOnInit() {
-    this.userService.getUsers()
-      .subscribe((users: any) => this.user = users.nick);
+    this.userService
+      .getUsers()
+      .subscribe((users: any) => (this.user = users.rangel));
   }
 
   toggleSidebar(): boolean {

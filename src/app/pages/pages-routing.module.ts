@@ -50,7 +50,7 @@ const routes: Routes = [{
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
   }, {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: '/pages/practice/simple-registration',
     pathMatch: 'full',
   }, {
     path: '**',

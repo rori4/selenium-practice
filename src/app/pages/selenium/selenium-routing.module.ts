@@ -8,6 +8,7 @@ import { RadioButtonFormComponent } from './radio-button-form/radio-button-form.
 import { DropdownFormComponent } from './dropdown-form/dropdown-form.component';
 import { DatepickerFormComponent } from './datepicker-form/datepicker-form.component';
 import { IframeFormComponent } from './iframe-form/iframe-form.component';
+import { FileFormComponent } from './file-form/file-form.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
         path: 'iframe-form',
         component: IframeFormComponent,
       },
+      {
+        path: 'file-form',
+        component: FileFormComponent,
+      },
     ],
   },
 ];
@@ -56,4 +61,5 @@ export const routedComponents = [
   DropdownFormComponent,
   DatepickerFormComponent,
   IframeFormComponent,
+  FileFormComponent,
 ];

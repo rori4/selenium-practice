@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from '../../../@core/utils/toastr.service';
 
 @Component({
   selector: 'ngx-file-form',
@@ -6,10 +8,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./file-form.component.scss'],
 })
 export class FileFormComponent implements OnInit {
-
-  constructor() { }
+  form: FormGroup;
+  constructor(private fb: FormBuilder, private toastrService: ToastrService) { }
 
   ngOnInit() {
+    this.form = this.fb.group({
+      file: ['', Validators.required],
+    });
+
   }
 
+  register() {
+    if (this.form.valid) {
+      this.toastrService.showSuccessSubmission();
+    }
+    // console.log(this.form);
+  }
+
+  get f() {
+    return this.form.controls;
+  }
 }

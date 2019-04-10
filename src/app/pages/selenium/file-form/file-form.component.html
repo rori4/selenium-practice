@@ -1,3 +1,39 @@
-<p>
-  file-form works!
-</p>
+<div class="row">
+  <div class="col-lg-3"></div>
+  <div class="col-lg-6">
+    <nb-card>
+      <nb-card-header>Date Picker Form Example (Reservation)</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="form" (submit)="register()">
+          <div class="form-group row">
+            <label class="col-sm-3">Try to upload a file to pass this practice</label>
+            <div class="col-sm-9">
+              <div class="input-group">
+                <input
+                  type="file"
+                  formControlName="file"
+                  class="form-control"
+                  placeholder="Simulate uploading a file..."
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="offset-sm-3 col-sm-9">
+              <button
+                type="submit"
+                name="submit"
+                id="submit"
+                class="btn btn-primary"
+                [disabled]="form.invalid"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+  <div class="col-lg-3"></div>
+</div>
